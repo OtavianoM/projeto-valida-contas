@@ -17,19 +17,6 @@ import java.util.List;
 
 @Slf4j
 public class ControleDeContas {
-
-    public static  void main(String[] args) throws IOException, InterruptedException {
-
-        List<String[]> arquivo = importFile("/entradadecontas.csv");
-
-        List<DadosContas> contas = validarContas(arquivo);
-
-        contas.forEach(obj->{
-            log.debug(obj.toString());
-            exportFile(obj.toString(), "saidadecontas.csv");
-        });
-    }
-
     public static List<DadosContas> validarContas(List<String[]> arquivos) throws InterruptedException {
         List<DadosContas> contasList = new ArrayList<>();
 
